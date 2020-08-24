@@ -1,3 +1,7 @@
+const Account = require('./account')
+const Category = require('./category')
+const Perk = require('./perk')
+const CreditCard = require('./creditCard')
 const User = require('./user')
 
 /**
@@ -13,6 +17,20 @@ const User = require('./user')
  * for example, we can say: const {User} = require('../db/models')
  * instead of: const User = require('../db/models/user')
  */
+
+User.hasMany(Account)
+Account.belongsTo(User)
+Account.belongsTo(CreditCard)
+CreditCard.hasMany(Account)
+CreditCard.hasMany(Perk)
+Perk.belongsTo(CreditCard)
+Perk.hasOne(Category)
+Category.belongsTo(Perk)
+
 module.exports = {
-  User
+  User,
+  Account,
+  Category,
+  Perk,
+  CreditCard
 }
