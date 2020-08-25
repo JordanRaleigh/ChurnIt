@@ -27,7 +27,7 @@ const CreditCard = db.define('creditCard', {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {isIn: [['Personal', 'Business']], notEmpty: true},
-    defaultValue: 'personal'
+    defaultValue: 'Personal'
   }
 })
 

@@ -12,19 +12,10 @@ module.exports = [
     name: 'Online Shopping'
   },
   {
-    name: 'extended warrany'
-  },
-  {
-    name: 'uber credit'
+    name: 'Extended Warranty'
   },
   {
     name: 'Hotels'
-  },
-  {
-    name: 'car rental'
-  },
-  {
-    name: 'Airlines'
   },
   {
     name: 'Gym Memberships'

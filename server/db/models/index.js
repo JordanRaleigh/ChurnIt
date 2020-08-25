@@ -24,8 +24,8 @@ Account.belongsTo(CreditCard)
 CreditCard.hasMany(Account)
 CreditCard.hasMany(Perk)
 Perk.belongsTo(CreditCard)
-Perk.hasOne(Category)
-Category.belongsTo(Perk)
+Perk.belongsTo(Category)
+Category.hasOne(Perk)
 
 module.exports = {
   User,

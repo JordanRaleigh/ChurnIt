@@ -16,9 +16,6 @@ const Perk = db.define('perk', {
       notEmpty: true
     }
   },
-  points: {
-    type: Sequelize.FLOAT
-  },
   benefits: {
     type: Sequelize.JSONB
   }

@@ -10,7 +10,7 @@ const {
 } = require('../server/db/models')
 const creditCard = require('./creditCard')
 const account = require('./account')
-const category = require('.category')
+const category = require('./category')
 const perk = require('./perk')
 
 async function seed() {
@@ -21,6 +21,21 @@ async function seed() {
     User.create({email: 'cody@email.com', password: '123'}),
     User.create({email: 'murphy@email.com', password: '123'})
   ])
+
+  const creditCards = await CreditCard.bulkCreate(creditCard)
+  account.forEach(acct => {
+    acct.creditCardId =
+      creditCards[Math.floor(Math.random() * creditCards.length)].id
+    acct.userId = users[Math.floor(Math.random() * users.length)].id
+  })
+  const accounts = await Account.bulkCreate(account)
+  const categories = await Category.bulkCreate(category)
+  perk.forEach(p => {
+    p.categoryId = categories[Math.floor(Math.random() * categories.length)].id
+    p.creditCardId =
+      creditCards[Math.floor(Math.random() * creditCards.length)].id
+  })
+  const perks = await Perk.bulkCreate(perk)
 
   console.log(`seeded ${users.length} users`)
   console.log(`seeded successfully`)
