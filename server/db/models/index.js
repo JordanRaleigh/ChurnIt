@@ -1,6 +1,6 @@
 const Account = require('./account')
 const Category = require('./category')
-const Perk = require('./perk')
+// const Perk = require('./perk')
 const CreditCard = require('./creditCard')
 const User = require('./user')
 
@@ -22,15 +22,15 @@ User.hasMany(Account)
 Account.belongsTo(User)
 Account.belongsTo(CreditCard)
 CreditCard.hasMany(Account)
-CreditCard.hasMany(Perk)
-Perk.belongsTo(CreditCard)
-Perk.belongsTo(Category)
-Category.hasOne(Perk)
+// CreditCard.hasMany(Perk)
+// Perk.belongsTo(CreditCard)
+// Perk.belongsTo(Category)
+// Category.hasOne(Perk)
 
 module.exports = {
   User,
   Account,
   Category,
-  Perk,
+  // Perk,
   CreditCard
 }
