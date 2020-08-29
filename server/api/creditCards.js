@@ -3,7 +3,9 @@ const {Category, Perk, CreditCard} = require('../db/models')
 
 router.get('/', async (req, res, next) => {
   try {
-    const creditCards = await CreditCard.findAll()
+    const creditCards = await CreditCard.findAll({
+      order: [['issuer', 'ASC'], ['card', 'ASC']]
+    })
     res.json(creditCards)
   } catch (error) {
     next(error)

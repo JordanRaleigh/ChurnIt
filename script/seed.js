@@ -38,6 +38,8 @@ async function seed() {
   const perks = await Perk.bulkCreate(perk)
 
   console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${accounts.length} accounts`)
+  console.log(`seeded ${perks.length} perks`)
   console.log(`seeded successfully`)
 }
 
