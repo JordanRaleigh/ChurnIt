@@ -28,6 +28,9 @@ const CreditCard = db.define('creditCard', {
     allowNull: false,
     validate: {isIn: [['Personal', 'Business']], notEmpty: true},
     defaultValue: 'Personal'
+  },
+  perks: {
+    type: Sequelize.JSONB
   }
 })
 

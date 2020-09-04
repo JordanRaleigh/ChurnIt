@@ -20,7 +20,7 @@ router.get('/:creditCardId', async (req, res, next) => {
       where: {
         id: creditCardId
       },
-      include: [Perk, Category]
+      order: [['']]
     })
     res.json(creditCard)
   } catch (error) {
