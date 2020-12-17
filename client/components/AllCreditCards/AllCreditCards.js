@@ -8,7 +8,7 @@ Modal.setAppElement('#app')
 const AllCreditCards = () => {
   const [creditCards, setCreditCards] = useState([])
   const [showModal, setShowModal] = useState(false)
-  const [perks, setPerks] = useState([])
+  // const [perks, setPerks] = useState([])
   const [creditCardId, setCreditCardId] = useState(0)
 
   // useEffect(() => {
@@ -56,7 +56,9 @@ const AllCreditCards = () => {
         contentLabel="Example Modal"
       >
         <h2>Hello</h2>
-        <button onClick={() => setShowModal(false)}>close</button>
+        <button onClick={() => setShowModal(false)} type="button">
+          close
+        </button>
         <div>I am a modal</div>
         <div>
           {creditCards[creditCardId] ? (
