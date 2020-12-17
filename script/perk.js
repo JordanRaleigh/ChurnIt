@@ -22,7 +22,11 @@ module.exports = [
   },
   {
     benefits: {
-      points: 9,
+      points: {
+        Travel: 3,
+        Dining: 2,
+        Everything: 1
+      },
       cashBack: 5,
       Lyft: {
         points: 4
